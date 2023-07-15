@@ -1,7 +1,5 @@
 # A SAMPLESTORE
 
-#### Video Demo: 
-
 #### Description:
 
 This is a sample e-com store for clothing developed using Flask for the backend, Postgres for the database, and HTML, CSS & JavaScript for the frontend.
