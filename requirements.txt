@@ -9,3 +9,4 @@ psycopg2-binary==2.9.2
 requests==2.22.0
 SQLAlchemy==1.4.28
 Werkzeug==0.16.1
+collections==3.9.7
