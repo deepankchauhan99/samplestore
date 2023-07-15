@@ -35,9 +35,9 @@ db = SQLAlchemy(app)
 # configuration of mail
 app.config['MAIL_SERVER']='smtpout.secureserver.net'
 app.config['MAIL_PORT'] = 80
-app.config['MAIL_DEFAULT_SENDER'] = 'support@underdogs-clothing.com' #os.getenv('MAIL_DEFAULT_SENDER')
-app.config['MAIL_USERNAME'] = 'support@underdogs-clothing.com' #os.getenv('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = 'Ud@02072023$' #os.getenv('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER')
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 mail = Mail(app)
