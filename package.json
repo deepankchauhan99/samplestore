@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "start": "PORT=3000 python3 app.py",
+        "start": "flask run --port 3000",
         "build": "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py && python3 -m pip install -r requirements.txt"
     },
     "repository": {
