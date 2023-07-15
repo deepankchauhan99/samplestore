@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    Profile
+{% endblock head %}
+
+{% block body %}
+    <div class="container">
+        <form autocomplete="off" action="/profile" method="post">
+            <div class="row">
+                <div class="col-md-6 profile-section">
+                    <span>Username: </span>
+                </div>
+                <div class="col-md-6 profile-section">
+                    <input type="text" name="username" id="username" placeholder="{{ profile.username }}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 profile-section">
+                    <span>Change Password: </span>
+                </div>
+                <div class="col-md-6 profile-section">
+                    <input type="password" name="password" id="password" placeholder="Enter new password">
+                </div>
+                <div class="col-md-6 profile-section">
+                </div>
+                <div class="col-md-6 profile-section">    
+                    <input type="password" name="confirmation" id="confirmation" placeholder="Repeat new password">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 profile-section">
+                    <span>Address: </span>
+                </div>
+                <div class="col-md-6 profile-section">    
+                    <textarea name="address" id="address" rows="4" cols="30" placeholder="{{ profile.address }}"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="hidden" name="user_id" value="{{ profile.id }}">
+                </div>
+                <div class="col-md-6 save-btn">
+                    <input class="btn btn-success" type="submit" value="Save changes">
+                </div>
+            </div>
+        </form>
+        
+    </div>
+    
+{% endblock body %}

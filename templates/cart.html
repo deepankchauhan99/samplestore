@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    Cart
+{% endblock head %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+            {% if items is defined and items|length == 0 %}
+                <h2>Your cart is empty</h2>
+            
+            {% else %}
+                {% for item in items %}
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="img-thumbnail img-fluid cart-img" src="static/{{ item.item_image }}" alt="product-image">
+                            <div class="cart-heading">
+                                <h6>{{ item.item_name }}</h6>
+                                <p class="cart-item-price">${{ item.item_price }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="col-lg-6">
+            <div class="container">
+                <form action="/checkout" method="post">
+                    <div class="container">
+                        <h2>Total: ${{ total }}</h2>
+                    </div>
+                    <div class="container">
+                        <input type="hidden" name="total" value="{{ total }}">
+                        <input class="btn btn-success" type="submit" value="Checkout">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

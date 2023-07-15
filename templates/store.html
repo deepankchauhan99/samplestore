@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    Store
+{% endblock head %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            {% for item in store_items %}
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top img-thumbnail img-fluid" src="static/{{ item.item_image }}" alt="product-image">
+                            <h6 class="card-heading">{{ item.item_name }}</h6>
+                            <p class="card-price">${{ item.item_price }}</p>
+                            <div class="row" style="margin: 0;">
+                                <div class="col-md-12" style="padding: 0;">
+                                    <span class="btn-buy">
+                                        <form action="/cart" method="post">
+                                            <input name="id" type="hidden" value="{{ item.item_id }}">
+                                            <input class="btn btn-success btn-inner-buy" style="margin: 0;" type="submit" name="buy" value="Add to cart">
+                                        </form>  
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>  
+{% endblock body %}

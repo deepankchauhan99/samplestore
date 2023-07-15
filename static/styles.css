@@ -1,0 +1,236 @@
+/* Global */
+.container {
+    margin: 5%;
+}
+
+.container-fluid {
+    padding: 7% 15%;
+}
+
+/* About Page */
+.colored-section {
+    background-color: aquamarine;
+    color: #ffffff;
+}
+
+.white-section {
+    background-color: #ffffff;
+}
+
+.footer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.about-tee-image {
+    float: right;
+    margin-left: 30px;
+    width: 90%;
+    transform: rotate(25deg);
+}
+
+.shopping-cart-image {
+    float: left;
+    margin-left: 30px;
+    width: 100%;
+}
+
+.section-layout {
+    margin: 10% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Style for smaller screens */
+@media (max-width: 1028px) {
+
+    .col-md-6 h2 {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        text-align: center;
+    }
+    .about-tee-image {
+        transform: rotate(0);
+    }
+}
+
+/* Store Page */
+.table-spacing {
+    border-collapse: separate; 
+    border-spacing: 100px;
+}
+
+.card {
+    width: fit-content;
+    height: fit-content;
+    margin: 3%;
+}
+
+.card-heading {
+    margin-top: 1%;
+}
+
+ .btn-buy {
+    width: 100%;
+    display: inline-block;
+}
+
+.btn-inner-buy {
+    width: 100%;
+    font-size: smaller;
+}
+
+.btn-wishlist {
+    width: 100%;
+    display: inline-block;
+}
+
+.btn-inner-wishlist {
+    width: 100%;
+    font-size: smaller;
+}
+
+img.card-img-top {
+    width: auto;
+    height: auto;
+}
+
+/* Login Page */
+.form-control {
+    display: inline-block;
+    width: auto;
+    width: 40%;
+}
+
+.form-group {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.jumbotron {
+    text-align: center;
+    margin: 5%;
+}
+
+.jumbotron .btn {
+    width: 40%
+}
+
+.btn-outline-success {
+    font-size: large;
+}
+
+.align-left {
+    width: 40%;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+}
+
+.apology-message {
+    text-align: center;
+}
+
+/* Home Page */
+.carousel-item {
+    height: 28rem;
+    background-color: #777;
+    color: white;
+    position: relative;
+}
+
+.carousel-text {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-bottom: 40px;
+}
+
+.carousel-indicators li {
+    background-color: #999 !important;
+    background-color: rgba(70,70,70,.25) !important;
+  }
+  
+  .carousel-indicators .active {
+    background-color: #444 !important;
+  } 
+
+/* Cart */
+
+.cart-img {
+    height: 30%;
+    width: 30%;
+}
+
+.cart-heading {
+    position: relative;
+    right: 10%;
+    float: right;
+}
+
+.cart-item-price {
+    font-size: large;
+}
+
+/* Profile */
+.profile-section {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.save-btn {
+    margin-top: 2%;
+}
+
+/* Checkout */
+.checkout-img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+.checkout-text {
+    display: flex;
+    align-items: center;
+}
+
+.checkout-row {
+    margin-top: 2%;
+}
+
+/* Info button animation */
+.extra-info {
+    display: none;
+    line-height: 30px;
+    font-size: 12px;
+}
+
+.info:hover .extra-info {
+    display: inline-block;
+}
+
+.info {
+    font-size: 20px;
+    padding-left: 5px;
+    width: 20px;
+    border-radius: 15px;
+}
+
+.info:hover {
+    background-color: #e3fdf1;
+    padding: 0 0 0 5px;
+    width: 315px;
+    text-align: left !important;
+}
+
+/* My Orders */
+.my-orders-row {
+    border: black;
+    border-width: 1px;
+    border-style: solid;
+}

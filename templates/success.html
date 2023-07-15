@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    Order Successful
+{% endblock head %}
+
+{% block body %}
+    <div class="container">
+        <h2>Your order has been placed!</h2>
+        <a style="margin-top: 1%;" class="btn btn-outline-info" href="/store">Continue shopping</a>
+    </div>
+    <div class="container">
+        <h4>Order Details</h4>
+        <hr>
+        <div class="container-fluid" style="padding: 0;">
+            <h6 style="display: inline;">Order Id: </h6>
+            <p style="display: inline;"> {{ order_details.ext_id }}</p>
+        </div>
+        <div class="container-fluid" style="padding: 0; padding-top: 2%;">
+            <h6 style="display: inline;">Order Time: </h6>
+            <p style="display: inline;"> {{ order_details.date }}</p>
+        </div>
+        <div class="container-fluid" style="padding: 0; padding-top: 2%;">
+            <h6 style="display: inline;">Order Value: </h6>
+            <p style="display: inline;"> ${{ order_details.order_value }}</p>
+        </div>
+        <div class="container-fluid" style="padding: 0; padding-top: 2%;">
+            <h6>Ordered Items:</h6>
+            <div class="row">
+                {% for item in items %}
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <img class="img-thumbnail img-fluid cart-img" src="static/{{ item.item_image }}" alt="product-image">
+                                <div class="cart-heading">
+                                    <h6>{{ item.item_name }}</h6>
+                                    <p class="cart-item-price">${{ item.item_price }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock body %}

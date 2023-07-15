@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    Apology
+{% endblock head %}
+
+{% block body %}
+    <div class="container apology-message">
+        <img alt="{{ top }}"  src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=x" title="{{ top }}">
+    </div>
+{% endblock body %}

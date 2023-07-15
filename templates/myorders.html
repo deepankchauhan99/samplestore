@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    My Orders
+{% endblock head %}
+
+{% block body %}
+    <div class="container">
+        <h2>Your Orders</h2>
+        <div class="row checkout-row">
+            <div class="col-3 checkout-text">
+                <h6>Order Id</h6>
+            </div>
+            <div class="col-3 checkout-text">
+                <h6>Order Date</h6>
+            </div>
+            <div class="col-3 checkout-text">
+                <h6>Order items</h6>
+            </div>
+            <div class="col-3 checkout-text">
+                <h6>Order Value</h6>
+            </div>
+        </div>
+        {% for order in orderList %}
+        <div class="row checkout-row">
+            <div class="col-3 checkout-text my-orders-row">
+                <p>{{ order.ext_id }}</p>
+            </div>
+            <div class="col-3 checkout-text my-orders-row">
+                <p>{{ order.date }}</p>
+            </div>
+            <div class="col-3 checkout-text my-orders-row">
+                <div class="row">
+                    {% for item in order.order_items %}
+                        <p>{{ item }}</p>
+                    {% endfor %}
+                </div>
+            </div>    
+            <div class="col-sm-3 checkout-text my-orders-row">
+                <p>${{ order.order_value }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock body %}

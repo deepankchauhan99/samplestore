@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    Checkout
+{% endblock head %}
+
+{% block body %}
+<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="jumbotron">
+                {% for item in items %}
+                    <div class="row checkout-row">
+                        <div class="col-sm-2">
+                            <img class="img-thumbnail img-fluid checkout-img" src="static/{{ item.item_image }}" alt="product-image">
+                        </div>
+                        <div class="col-sm-8 checkout-text">
+                            <p>{{ item.item_name }}</p>
+                        </div>
+                        <div class="col-sm-2 checkout-text">
+                            <p>${{ item.item_price }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                <hr>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8 checkout-text">
+                        <p>Total </p>
+                    </div>
+                    <div class="col-sm-2 checkout-text">
+                        <p>${{ total }}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8 checkout-text">
+                        <p>Shipping Charges </p>
+                    </div>
+                    {% if freeShipping == True %}
+                        <div class="col-sm-2 checkout-text">
+                            <p>Free</p>
+                        </div>
+                    {% else %}
+                        <div class="col-sm-2 checkout-text">
+                            <p>${{ shippingCharges }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="container">
+                <div class="container">
+                    <h2 style="display: inline;">You have to pay: $</h2><h2 id="grand-total" style="display: inline;">{{ grandTotal }}</h2>
+                        <div style="margin-top: 2%;" class="row checkout-text">
+                            <div class="col-sm-6">
+                                <p>Have a promo code? </p>
+                            </div>
+                            <div class="col-sm-4">
+                                <input autocomplete="off" style="width: 90%;" type="text" name="promo" id="promo">
+                            </div>
+                            <div class="col-sm-2">
+                                <input onclick="promo(document.getElementById('promo').value)" id="promo-btn" style="font-size: small;" class="btn btn-outline-success btn-sm disabled" type="submit" value="Check">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p style="margin-top: 1%; background-color: #378143; color: white" id="promo-success"></p>
+                        </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <h6>Shipping Address </h6>
+                        </div>
+                        <div class="col-sm-8">
+                            <p>{{ address.address }}</p>
+                            <div class="info">
+                                <i class="icon-info-sign"></i>
+                                <span class="extra-info">
+                                  Go to My Profile to change the address
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form action="/success" method="post">    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <h6>Enter your email </h6>
+                            </div>
+                            <div class="col-sm-7">
+                                <input type="email" name="email" id="email" required>
+                            </div>
+                        </div>
+                        <input id="grand-total-return" type="hidden" name="grandTotal">
+                        <input style="width: 50%; margin-top: 10%;" class="btn btn-success" type="submit" value="Place Order">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

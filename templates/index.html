@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    Homepage
+{% endblock head %}
+
+{% block body %}
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    
+      <div class="carousel-item active" data-bs-interval="5000">
+        <a href="/store">
+          <img src="static/carousel-image-1.jpg" class="d-block w-100" alt="carousel-image">
+        </a>
+      </div>
+    
+    {% for i in range(2, 4)%}
+      <div class="carousel-item" data-bs-interval="5000">
+        <a href="/store">
+          <img src="static/carousel-image-{{ i }}.jpg" class="d-block w-100" alt="carousel-image">
+        </a>
+      </div>
+    {% endfor %}
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="container">
+  <div class="row">
+    <h2>NEW ARRIVALS</h2>
+      <div class="row">
+        {% for new_item in new_arrivals %}
+          {% if new_item.new_arrival == "yes" %}
+            <div class="col-sm-4">
+              <a href="/store" style="color: black; text-decoration: none;">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img-top img-thumbnail img-fluid" src="static/{{ new_item.item_image }}" alt="product-image">
+                        <h6 style="text-align: center;" class="card-heading">{{ new_item.item_name }} <span class="badge bg-success">New</span></h6>
+                    </div>
+                </div>
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+    </div>
+
+  </div>
+</div>
+{% endblock body %}

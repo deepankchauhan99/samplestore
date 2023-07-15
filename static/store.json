@@ -1,0 +1,56 @@
+[
+    {
+        "item_name": "Men's White T-shirt",
+        "item_price": "20",
+        "item_image": "whitetee.jpg",
+        "new_arrival": "no"
+    },
+    {
+        "item_name": "Men's Black T-shirt",
+        "item_price": "25",
+        "item_image": "blacktee.jpg",
+        "new_arrival": "no"
+    },
+    {
+        "item_name": "Men's Yellow T-shirt",
+        "item_price": "20",
+        "item_image": "yellowtee.jpg",
+        "new_arrival": "no"
+    },
+    {
+        "item_name": "Men's Red T-shirt",
+        "item_price": "15",
+        "item_image": "redtee.jpg",
+        "new_arrival": "no"
+    },
+    {
+        "item_name": "Men's Purple T-shirt",
+        "item_price": "15",
+        "item_image": "purpletee.jpg",
+        "new_arrival": "no"
+    },
+    {
+        "item_name": "Women's Black T-shirt",
+        "item_price": "30",
+        "item_image": "womenteeblack.jpeg",
+        "new_arrival": "yes"
+    },
+    {
+        "item_name": "Women's Yellow T-shirt",
+        "item_price": "30",
+        "item_image": "womenteeyellow.jpeg",
+        "new_arrival": "yes"
+    },
+    {
+        "item_name": "Women's Green T-shirt",
+        "item_price": "30",
+        "item_image": "womenteegreen.jpg",
+        "new_arrival": "no"
+    },
+    {
+        "item_name": "Women's Pink Blazer",
+        "item_price": "30",
+        "item_image": "womenblazerpink.jpg",
+        "new_arrival": "yes"
+    }
+]
