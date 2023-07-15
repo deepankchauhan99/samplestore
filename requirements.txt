@@ -4,10 +4,7 @@ Flask-Session==0.4.0
 Flask-SQLAlchemy==2.5.1
 greenlet==1.1.2
 Jinja2==2.10.1
-markupsafe
-jinja
-jinja2
-flask
+MarkupSafe==0.23
 psycopg2-binary==2.9.2
 requests==2.22.0
 SQLAlchemy==1.4.28
