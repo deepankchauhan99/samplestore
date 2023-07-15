@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "start": "flask run --port 3000",
+        "start": "npm run update-deps && flask run --port 3000",
+        "update-deps": "pip install --upgrade markupsafe flask jinja2",
         "build": "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3 get-pip.py && python3 -m pip install -r requirements.txt"
     },
     "repository": {
