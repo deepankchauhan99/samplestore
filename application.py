@@ -33,13 +33,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://deepank:deepank@localhost/
 db = SQLAlchemy(app)
 
 # configuration of mail
-# app.config['MAIL_SERVER']='smtp.gmail.com'
-# app.config['MAIL_PORT'] = 465
-# app.config['MAIL_DEFAULT_SENDER'] = 'deepankchauhan99@gmail.com' #os.getenv('MAIL_DEFAULT_SENDER')
-# app.config['MAIL_USERNAME'] = 'deepankchauhan99@gmail.com' #os.getenv('MAIL_USERNAME')
-# app.config['MAIL_PASSWORD'] = 'Dishu@8!999' #os.getenv('MAIL_PASSWORD')
-# app.config['MAIL_USE_TLS'] = False
-# app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_SERVER']='smtpout.secureserver.net'
 app.config['MAIL_PORT'] = 80
 app.config['MAIL_DEFAULT_SENDER'] = 'support@underdogs-clothing.com' #os.getenv('MAIL_DEFAULT_SENDER')
